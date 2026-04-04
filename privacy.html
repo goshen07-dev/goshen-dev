@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Goshen Dev</title>
+  <meta name="description" content="Privacy Policy for Goshen Dev — Django & Web Developer platform."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060a12;
+      --surface: #0d1520;
+      --accent: #00d4ff;
+      --accent2: #f0a500;
+      --text: #e8edf5;
+      --muted: #5a6a80;
+      --border: rgba(0, 212, 255, 0.12);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent2); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 10rem 4rem 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: 'PRIVACY';
+      position: absolute;
+      top: 50%;
+      right: -2rem;
+      transform: translateY(-50%);
+      font-size: 12rem;
+      font-weight: 800;
+      color: rgba(0,212,255,0.03);
+      pointer-events: none;
+      white-space: nowrap;
+      letter-spacing: -0.05em;
+    }
+
+    .page-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      animation: none;
+      opacity: 1;
+    }
+
+    .page-header .last-updated {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── CONTENT ── */
+    .content-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 2rem 2.5rem;
+      margin-bottom: 4rem;
+      border-radius: 2px;
+    }
+
+    .toc-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero) ' — ';
+      color: var(--accent2);
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .toc a:hover { color: var(--accent); }
+    /* ── SECTIONS ── */
+    .policy-section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+    }
+
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent2);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .policy-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .policy-section p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 1rem;
+    }
+
+    .policy-section p strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .policy-section p a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,212,255,0.3);
+      transition: border-color 0.3s;
+    }
+
+    .policy-section p a:hover {
+      border-color: var(--accent);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+    }
+
+    .data-table th {
+      background: var(--surface);
+      color: var(--accent);
+      text-align: left;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--border);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    .data-table td {
+      padding: 0.85rem 1.2rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .data-table tr:hover td {
+      background: rgba(0,212,255,0.02);
+      color: var(--text);
+    }
+
+    .highlight-box {
+      background: rgba(0,212,255,0.04);
+      border: 1px solid rgba(0,212,255,0.15);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: var(--text) !important;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 1.5rem;
+    }
+
+    .right-item {
+      background: var(--surface);
+      padding: 1.5rem;
+      transition:  0.3s;
+    }
+
+    .right-item:hover {
+      background: rgba(0,212,255,0.04);
+    }
+
+    .right-icon {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .right-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .right-desc {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .contact-info strong {
+      color: var(--text);
+      display: block;
+      font-size: 1rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .btn {
+      padding: 0.85rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 700;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0,212,255,0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 8rem 1.5rem 3rem; }
+      .content-wrapper { padding: 3rem 1.5rem; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; }
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">GOSHEN<span>.</span>DEV</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="page-tag">Legal Document</span>
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last updated: January 1, 2025 &nbsp;·&nbsp; Effective immediately</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrapper">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <p class="toc-title">Table of Contents</p>
+    <ol>
+      <li><a href="#s1">Who We Are</a></li>
+      <li><a href="#s2">Data We Collect</a></li>
+      <li><a href="#s3">How We Use Your Data</a></li>
+      <li><a href="#s4">Third-Party Services & APIs</a></li>
+      <li><a href="#s5">Data Storage & Security</a></li>
+      <li><a href="#s6">Your Rights (GDPR)</a></li>
+      <li><a href="#s7">Cookies</a></li>
+      <li><a href="#s8">Children's Privacy</a></li>
+      <li><a href="#s9">Changes to This Policy</a></li>
+      <li><a href="#s10">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- INTRO -->
+  <div class="highlight-box" style="margin-bottom:3rem;">
+    <p>This Privacy Policy explains how Goshen Dev collects, uses, and protects your personal information when you use our website, web applications, or services. We are committed to full compliance with the General Data Protection Regulation (GDPR) and applicable data protection laws.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="policy-section" id="s1">
+    <span class="section-number">01 / Identity</span>
+    <h2>Who We Are</h2>
+    <p><strong>Data Controller:</strong> Goshen El Satellitaire, operating under the professional alias Goshen Dev.</p>
+    <p><strong>Website:</strong> <a href="https://goshen-dev.onrender.com">goshen-dev.onrender.com</a></p>
+    <p><strong>Contact Email:</strong> <a href="mailto:contact@goshen-dev.com">contact@goshen-dev.com</a></p>
+    <p><strong>Location:</strong> Lomé, Togo</p>
+    <p>We are an independent web development service provider and software developer. This policy applies to all websites, applications, and services operated under the Goshen Dev brand.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="policy-section" id="s2">
+    <span class="section-number">02 / Data Collection</span>
+    <h2>Data We Collect</h2>
+    <p>We collect only the minimum data necessary to provide our services. The following table details what we collect, why, and the legal basis under GDPR.</p>
+
+    <table class="data-table">
+      <thead>
+<tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Legal Basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name & Email Address</td>
+          <td>Contact form submissions, project inquiries</td>
+          <td>Consent (Art. 6.1.a)</td>
+        </tr>
+        <tr>
+          <td>IP Address & Browser Info</td>
+          <td>Security, analytics, server logs</td>
+          <td>Legitimate Interest (Art. 6.1.f)</td>
+        </tr>
+        <tr>
+          <td>Social Account Data (OAuth)</td>
+          <td>API integrations when user connects social accounts</td>
+          <td>Consent (Art. 6.1.a)</td>
+        </tr>
+        <tr>
+          <td>Usage Data</td>
+          <td>Platform performance, feature improvement</td>
+          <td>Legitimate Interest (Art. 6.1.f)</td>
+        </tr>
+        <tr>
+          <td>Payment Information</td>
+          <td>Processed via Stripe — we never store card details directly</td>
+          <td>Contract (Art. 6.1.b)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We <strong>do not</strong> sell, rent, or trade your personal data to any third party under any circumstances.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="policy-section" id="s3">
+    <span class="section-number">03 / Usage</span>
+    <h2>How We Use Your Data</h2>
+    <p>Your data is used exclusively for the following purposes:</p>
+    <p>· To respond to your contact form inquiries and project requests.</p>
+    <p>· To provide and maintain our web applications and tools.</p>
+    <p>· To process payments through our payment processor (Stripe).</p>
+    <p>· To improve the performance, security, and functionality of our services.</p>
+    <p>· To comply with legal obligations.</p>
+    <p>We will never use your data for unsolicited marketing communications without your explicit prior consent.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="policy-section" id="s4">
+    <span class="section-number">04 / Third Parties</span>
+    <h2>Third-Party Services & APIs</h2>
+    <p>Our services may integrate with the following third-party platforms. Each has its own Privacy Policy which governs how they handle your data.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google / YouTube API</td>
+          <td>YouTube account analytics & API integration</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>TikTok for Business API</td>
+          <td>TikTok account analytics & ad management</td>
+          <td><a href="https://www.tiktok.com/legal/privacy-policy" target="_blank">TikTok Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>Stripe</td>
+          <td>Secure payment processing</td>
+          <td><a href="https://stripe.com/privacy" target="_blank">Stripe Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>Cloudinary</td>
+          <td>Media file storage and delivery</td>
+          <td><a href="https://cloudinary.com/privacy" target="_blank">Cloudinary Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>Render</td>
+          <td>Web hosting and deployment infrastructure</td>
+          <td><a href="https://render.com/privacy" target="_blank">Render Privacy Policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>When you connect a social media account to our tools via OAuth 2.0, we request only the minimum permissions necessary. We do not post content on your behalf without explicit action from you. You may revoke our access at any time through the respective platform's settings.</p>
+  </div>
+ <!-- SECTION 5 -->
+  <div class="policy-section" id="s5">
+    <span class="section-number">05 / Security</span>
+    <h2>Data Storage & Security</h2>
+    <p>All data is stored on <strong>Render's infrastructure</strong> with PostgreSQL databases protected by environment variable encryption. We apply the following security measures:</p>
+    <p>· All data transmission is encrypted via HTTPS/TLS.</p>
+    <p>· Database credentials and API keys are stored as encrypted environment variables, never in source code.</p>
+    <p>· Access to production systems is restricted to authorized personnel only.</p>
+    <p>· We conduct regular security reviews of our codebase and dependencies.</p>
+    <p>Data is retained only as long as necessary for the purpose for which it was collected. Contact data from inquiries is retained for a maximum of <strong>24 months</strong> unless a contractual relationship requires longer retention.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="policy-section" id="s6">
+    <span class="section-number">06 / Your Rights</span>
+    <h2>Your Rights (GDPR)</h2>
+    <p>If you are located in the European Union or European Economic Area, you have the following rights under the General Data Protection Regulation (GDPR). We are committed to honoring all requests within <strong>30 days</strong>.</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <span class="right-icon">👁️</span>
+        <p class="right-title">Right to Access</p>
+        <p class="right-desc">Request a copy of all personal data we hold about you.</p>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">✏️</span>
+        <p class="right-title">Right to Rectification</p>
+        <p class="right-desc">Request correction of inaccurate or incomplete data.</p>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">🗑️</span>
+        <p class="right-title">Right to Erasure</p>
+        <p class="right-desc">Request deletion of your personal data ("right to be forgotten").</p>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">⏸️</span>
+        <p class="right-title">Right to Restriction</p>
+        <p class="right-desc">Request that we limit how we process your data.</p>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">📦</span>
+        <p class="right-title">Right to Portability</p>
+        <p class="right-desc">Receive your data in a structured, machine-readable format.</p>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">🚫</span>
+        <p class="right-title">Right to Object</p>
+        <p class="right-desc">Object to processing based on legitimate interest at any time.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;">To exercise any of these rights, contact us at <a href="mailto:contact@goshen-dev.com">contact@goshen-dev.com</a> with the subject line "GDPR Request". We will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.</p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="policy-section" id="s7">
+    <span class="section-number">07 / Cookies</span>
+    <h2>Cookies</h2>
+    <p>Our main portfolio website (<strong>goshen-dev.onrender.com</strong>) uses only essential session cookies required for basic functionality. We do not use tracking cookies, advertising cookies, or third-party analytics cookies on this site.</p>
+    <p>Our web applications may use session cookies to maintain your authenticated state. These cookies are strictly necessary and do not track you across other websites.</p>
+    <p>You can control cookie settings through your browser preferences at any time without affecting the basic functionality of this portfolio site.</p>
+  </div>
+  <!-- SECTION 8 -->
+  <div class="policy-section" id="s8">
+    <span class="section-number">08 / Children</span>
+    <h2>Children's Privacy</h2>
+    <p>Our services are not directed at individuals under the age of <strong>16 years old</strong>. We do not knowingly collect personal data from children. If you believe a child under 16 has provided us with personal information, please contact us immediately at <a href="mailto:contact@goshen-dev.com">contact@goshen-dev.com</a> and we will delete that information promptly.</p>
+  </div>
+ <!-- SECTION 9 -->
+  <div class="policy-section" id="s9">
+    <span class="section-number">09 / Updates</span>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy periodically to reflect changes in our services, legal requirements, or best practices. When we make significant changes, we will update the "Last updated" date at the top of this page.</p>
+    <p>We encourage you to review this policy periodically. Continued use of our services after changes are posted constitutes your acceptance of the updated policy.</p>
+    <p>For material changes affecting your rights, we will make reasonable efforts to notify you directly via email if we have your contact information.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="policy-section" id="s10">
+    <span class="section-number">10 / Contact</span>
+    <h2>Contact Us</h2>
+    <p>For any privacy-related questions, GDPR requests, or data concerns, reach out directly.</p>
+
+    <div class="contact-card">
+      <div class="contact-info">
+        <strong>Goshen El Satellitaire</strong>
+        <p>Data Controller · Goshen Dev</p>
+        <p>Lomé, Togo</p>
+        <p><a href="mailto:contact@goshen-dev.com">contact@goshen-dev.com</a></p>
+      </div>
+      <a href="mailto:contact@goshen-dev.com?subject=GDPR Request" class="btn btn-primary">
+        Send GDPR Request
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Goshen El Satellitaire — <a href="index.html">Back to Portfolio</a></p>
+  <p><a href="mailto:contact@goshen-dev.com">contact@goshen-dev.com</a></p>
+</footer>
+
+</body>
+</html>  
