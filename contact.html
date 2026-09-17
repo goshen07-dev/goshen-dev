@@ -2,6 +2,28 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <!-- Chariow Widget -->
+<div id="chariow-widget" data-product-id="prd_r2wxuj68"
+    data-store-domain="goshentech.mychariow.online"
+    data-style="tap"
+    data-border-style="rounded"
+    data-cta-width="xs"
+    data-cta-animation="none"
+    data-locale="en"
+    data-background-color="#FFFFFF"></div>
+<script>
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://js.chariowcdn.com/v1/widget.min.js';
+  script.async = true;
+  document.head.appendChild(script);
+
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://js.chariowcdn.com/v1/widget.min.css';
+  document.head.appendChild(link);
+})();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Goshen Dev</title>
   <meta name="description" content="Get in touch with Goshen Dev — Django & Python developer based in Lomé, Togo. Available for freelance projects and collaborations."/>
@@ -22,6 +44,7 @@
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    
 
     body {
       background: var(--bg);
